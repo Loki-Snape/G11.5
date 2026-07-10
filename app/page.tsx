@@ -1,43 +1,54 @@
 import prisma from '@/app/lib/prisma';
-import NavBar from './components/NavBar';
-import StatusBadge from './components/StatusBadge';
+import HomeClient from './components/HomeClient';
+import { authenticParanormalHeadlines } from './lib/paranormalHeadlines';
 
 export const dynamic = 'force-dynamic'; // Ensure server side data fetching
+
+function shuffle<T>(array: T[]): T[] {
+  const result = [...array];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
 
 export default async function HomePage() {
   const caseCount = await prisma.cases.count();
   const equipmentCount = await prisma.equipment.count();
   const memberCount = await prisma.members.count();
-  const entityCount = await prisma.entities.count(); // entities model stores entities
+  const entityCount = await prisma.entities.count();
+
+  // Fetch all entities from the database
+  const dbEntities = await prisma.entities.findMany({
+    select: {
+      entity_name: true,
+      tier: true,
+    },
+  });
+
+  // Format database entities
+  const entityItems = dbEntities.map(
+    (e) => `[NEW ENTITY DETECTED: ${e.entity_name.toUpperCase()} // CLASS: TIER ${e.tier.toUpperCase()}]`
+  );
+
+  // Sample 25 flavor headlines randomly and format them
+  const sampledHeadlines = shuffle(authenticParanormalHeadlines)
+    .slice(0, 25)
+    .map((headline) => `[INTEL: ${headline.toUpperCase()}]`);
+
+  // Combine and randomize order using Fisher-Yates shuffle
+  const tickerItems = shuffle([...entityItems, ...sampledHeadlines]);
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans">
-      <NavBar />
-      <main className="p-8 max-w-5xl mx-auto">
-        <h1 className="text-4xl font-serif text-[#d4af37] mb-6">G11.5 Agency Portal</h1>
-        <div className="grid grid-cols-2 gap-6">
-          <div className="bg-gray-900 p-4 rounded">
-            <h2 className="text-lg font-medium text-[#d4af37]">Cases</h2>
-            <p className="text-2xl mt-2">{caseCount}</p>
-          </div>
-          <div className="bg-gray-900 p-4 rounded">
-            <h2 className="text-lg font-medium text-[#d4af37]">Equipment</h2>
-            <p className="text-2xl mt-2">{equipmentCount}</p>
-          </div>
-          <div className="bg-gray-900 p-4 rounded">
-            <h2 className="text-lg font-medium text-[#d4af37]">Personnel</h2>
-            <p className="text-2xl mt-2">{memberCount}</p>
-          </div>
-          <div className="bg-gray-900 p-4 rounded">
-            <h2 className="text-lg font-medium text-[#d4af37]">Entities</h2>
-            <p className="text-2xl mt-2">{entityCount}</p>
-          </div>
-        </div>
-        <section className="mt-8">
-          <h2 className="text-2xl font-serif text-[#d4af37] mb-4">System Status</h2>
-          <StatusBadge status="online" />
-        </section>
-      </main>
+      <HomeClient
+        caseCount={caseCount}
+        equipmentCount={equipmentCount}
+        memberCount={memberCount}
+        entityCount={entityCount}
+        tickerItems={tickerItems}
+      />
     </div>
   );
 }

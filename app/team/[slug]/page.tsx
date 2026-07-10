@@ -73,9 +73,8 @@ export default async function MemberDossierPage({ params }: PageProps) {
               <h2 className="text-lg font-serif text-[#d4af37] mb-2 border-b border-[#d4af37]/20 pb-1" style={{ fontFamily: 'Cinzel, serif' }}>
                 Biography
               </h2>
-              {/* PLACEHOLDER: Lorem Ipsum content for member bio */}
               <p className="text-sm text-gray-300 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                {member.bio || "No biography details recorded."}
               </p>
             </div>
 
@@ -84,9 +83,8 @@ export default async function MemberDossierPage({ params }: PageProps) {
               <h2 className="text-lg font-serif text-[#d4af37] mb-2 border-b border-[#d4af37]/20 pb-1" style={{ fontFamily: 'Cinzel, serif' }}>
                 Agency History & Background
               </h2>
-              {/* PLACEHOLDER: Lorem Ipsum content for agency history */}
               <p className="text-sm text-gray-300 leading-relaxed">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {member.background || "No background details recorded."}
               </p>
             </div>
 

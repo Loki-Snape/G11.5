@@ -2,6 +2,7 @@ generator client {
   provider = "prisma-client"
   output   = "../app/generated/prisma"
 }
+
 datasource db {
   provider = "postgresql"
 }
@@ -10,12 +11,12 @@ model applications {
   id              Int       @id @default(autoincrement())
   full_name       String    @db.VarChar(255)
   why_hire_you    String
-  email           String    @db.VarChar(255)
-  phone           String    @db.VarChar(255)
   motivation      String
-  interested_role String    @db.VarChar(255)
   status          String    @default("Review Pending") @db.VarChar(50)
   submitted_at    DateTime? @default(now()) @db.Timestamp(6)
+  email           String    @db.VarChar(255)
+  phone           String    @db.VarChar(255)
+  interested_role String    @db.VarChar(255)
 }
 
 model cases {
@@ -32,7 +33,7 @@ model cases {
   location        String?   @db.VarChar(255)
   reporter_phone  String?   @db.VarChar(50)
   reporter_email  String?   @db.VarChar(255)
-  activity_types  String?   @db.Text
+  activity_types  String?
   timing          String?   @db.VarChar(50)
   danger_level    String?   @db.VarChar(255)
 }
@@ -45,8 +46,8 @@ model equipment {
 }
 
 model entities {
-  id                    Int     @id @default(autoincrement())
-  entity_name           String  @unique @db.VarChar(255)
+  id                    Int     @id(map: "ghostopedia_pkey") @default(autoincrement())
+  entity_name           String  @unique(map: "ghostopedia_entity_name_key") @db.VarChar(255)
   tier                  String  @db.VarChar(50)
   strength              String
   weakness              String
@@ -56,11 +57,13 @@ model entities {
 }
 
 model members {
-  id              Int    @id @default(autoincrement())
-  name            String @db.VarChar(255)
-  slug            String @unique @db.VarChar(255)
-  role            String @db.VarChar(100)
-  tier            String @db.VarChar(50)
-  clearance_level String @db.VarChar(50)
+  id              Int     @id @default(autoincrement())
+  name            String  @db.VarChar(255)
+  slug            String  @unique @db.VarChar(255)
+  role            String  @db.VarChar(100)
+  tier            String  @db.VarChar(50)
+  clearance_level String  @db.VarChar(50)
   portraitUrl     String? @db.VarChar(255)
+  bio             String?
+  background      String?
 }
