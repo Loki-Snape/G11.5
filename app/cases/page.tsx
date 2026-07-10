@@ -5,7 +5,23 @@ export const metadata = {
   title: 'Cases - G11.5 Agency',
 };
 
-const formatDate = (date: Date | null | undefined) => {
+// Define a type for the case record to satisfy Vercel's strict TypeScript compiler
+type CaseRecord = {
+  id: string | number;
+  status?: string | null;
+  description?: string | null;
+  tracking_number?: string | null;
+  threat_rating?: string | null;
+  location?: string | null;
+  start_date?: Date | string | null;
+  end_date?: Date | string | null;
+  created_by?: string | null;
+  created_at?: Date | string | null;
+  case_file_link?: string | null;
+  [key: string]: any; // Catch-all for any other Prisma fields
+};
+
+const formatDate = (date: Date | string | null | undefined) => {
   if (!date) return '';
   return new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -48,7 +64,8 @@ export default async function CasesPage() {
         </p>
 
         {sections.map((section) => {
-          const casesInSec = allCases.filter((c) => c.status === section.queryKey);
+          // Explicitly type 'c' using the CaseRecord interface
+          const casesInSec = allCases.filter((c: CaseRecord) => c.status === section.queryKey);
 
           return (
             <section key={section.key} className="mb-12">
@@ -58,7 +75,7 @@ export default async function CasesPage() {
 
               {casesInSec.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {casesInSec.map((c) => {
+                  {casesInSec.map((c: CaseRecord) => {
                     const desc = c.description ?? '';
                     const truncatedDesc = desc.length > 150 ? desc.substring(0, 150) + '...' : desc;
 
