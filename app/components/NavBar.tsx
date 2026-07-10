@@ -19,8 +19,18 @@ export default function NavBar() {
   // hide on admin routes (middleware already blocks, but keep for safety)
   if (pathname.startsWith('/admin')) return null;
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#050505] border-b border-[#d4af37]/30 z-50">
-      <ul className="flex justify-center space-x-6 py-3">
+    <nav className="fixed top-0 left-0 right-0 bg-[#050505] border-b border-[#d4af37]/30 z-50 px-6 py-3 flex items-center justify-between">
+      <div className="flex items-center space-x-3">
+        <img
+          src="/Logo.jpg"
+          alt="G11.5 Logo"
+          className="h-8 w-8 rounded-full border border-[#d4af37]/40 p-0.5 object-cover"
+        />
+        <span className="text-[#d4af37] font-serif tracking-[2px] text-sm font-bold uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
+          G11.5 Agency Portal
+        </span>
+      </div>
+      <ul className="flex space-x-6">
         {links.map((link) => (
           <li key={link.href}>
             <Link
