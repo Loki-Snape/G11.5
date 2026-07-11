@@ -64,10 +64,10 @@ export default async function AdminDashboardPage() {
   return (
     <div className="flex flex-col space-y-8 animate-fade-in">
       <div className="border-b border-[#d4af37]/20 pb-4">
-        <p className="text-xs uppercase tracking-[2px] text-[#d4af37]/80 font-mono mb-1">
+        <p className="text-[10px] sm:text-xs uppercase tracking-[2px] text-[#d4af37]/80 font-mono mb-1">
           Secure Command Session Active
         </p>
-        <h1 className="text-4xl font-serif text-[#d4af37] tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>
+        <h1 className="text-2xl sm:text-4xl font-serif text-[#d4af37] tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>
           Agency Command
         </h1>
       </div>

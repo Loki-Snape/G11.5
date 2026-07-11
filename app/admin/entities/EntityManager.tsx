@@ -145,7 +145,7 @@ export default function EntityManager({ initialEntities }: EntityManagerProps) {
                 value={entityName}
                 onChange={(e) => setEntityName(e.target.value)}
                 placeholder="e.g. The Ignis Tulpa"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -159,7 +159,7 @@ export default function EntityManager({ initialEntities }: EntityManagerProps) {
                 value={tier}
                 onChange={(e) => setTier(e.target.value)}
                 placeholder="e.g. Class V Manifestation"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -174,7 +174,7 @@ export default function EntityManager({ initialEntities }: EntityManagerProps) {
                 value={strength}
                 onChange={(e) => setStrength(e.target.value)}
                 placeholder="Describe capabilities..."
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none h-20 transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none h-20 transition-colors"
                 required
               />
             </div>
@@ -187,7 +187,7 @@ export default function EntityManager({ initialEntities }: EntityManagerProps) {
                 value={weakness}
                 onChange={(e) => setWeakness(e.target.value)}
                 placeholder="Describe containment counters..."
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none h-20 transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none h-20 transition-colors"
                 required
               />
             </div>
@@ -203,7 +203,7 @@ export default function EntityManager({ initialEntities }: EntityManagerProps) {
                 value={idMethod}
                 onChange={(e) => setIdMethod(e.target.value)}
                 placeholder="e.g. Sudden localized temperature drops"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -217,7 +217,7 @@ export default function EntityManager({ initialEntities }: EntityManagerProps) {
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
                 placeholder="e.g. /Entities/Ignis Tulpa.png"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
               />
             </div>
           </div>
@@ -230,7 +230,7 @@ export default function EntityManager({ initialEntities }: EntityManagerProps) {
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               placeholder="Provide historical context and documented behaviors..."
-              className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none h-24 transition-colors"
+              className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none h-24 transition-colors"
               required
             />
           </div>
@@ -252,7 +252,7 @@ export default function EntityManager({ initialEntities }: EntityManagerProps) {
         </h2>
 
         <div className="overflow-x-auto rounded-lg border border-[#d4af37]/15 bg-black/20">
-          <table className="min-w-full divide-y divide-[#d4af37]/15 text-left text-sm">
+          <table className="min-w-[800px] w-full divide-y divide-[#d4af37]/15 text-left text-sm">
             <thead className="bg-[#0c0c0c] text-xs uppercase tracking-widest text-[#d4af37]/90 font-mono">
               <tr>
                 <th className="px-6 py-4">Entity Name</th>

@@ -44,19 +44,19 @@ export default async function TeamPage() {
   // Ensure all tiers are present for rendering (including empty Support Staff)
   const tiers = TIER_ORDER;
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans">
+    <div className="min-h-screen bg-[#050505] text-white font-sans flex flex-col">
       <NavBar />
-      <main className="p-8 max-x-5xl mx-auto">
-        <h1 className="text-3xl font-serif text-[#d4af37] mb-6">Team</h1>
+      <main className="px-4 py-8 sm:p-8 max-w-5xl mx-auto w-full flex-grow">
+        <h1 className="text-3xl sm:text-4xl font-serif text-[#d4af37] mb-6 pt-20 md:pt-0">Team</h1>
         {tiers.map((tier) => {
           const membersInTier = members.filter((m) => m.tier === tier);
           return (
             <section key={tier} className="mb-8">
-              <h2 className="text-2xl font-serif text-[#d4af37] mb-4">
+              <h2 className="text-xl sm:text-2xl font-serif text-[#d4af37] mb-4">
                 {TIER_LABELS[tier] ?? tier}
               </h2>
               {membersInTier.length > 0 ? (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {membersInTier.map((member) => (
                     <a
                       key={member.id}

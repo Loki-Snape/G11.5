@@ -213,7 +213,7 @@ export default function PersonnelManager({ initialMembers }: PersonnelManagerPro
                 value={name}
                 onChange={handleNameChange}
                 placeholder="e.g. John Doe"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -236,7 +236,7 @@ export default function PersonnelManager({ initialMembers }: PersonnelManagerPro
                 value={slug}
                 onChange={handleSlugChange}
                 placeholder="e.g. john-doe"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none font-mono transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none font-mono transition-colors"
                 required
               />
             </div>
@@ -252,7 +252,7 @@ export default function PersonnelManager({ initialMembers }: PersonnelManagerPro
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
                 placeholder="e.g. Occult Scholar, Field Agent"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -264,7 +264,7 @@ export default function PersonnelManager({ initialMembers }: PersonnelManagerPro
               <select
                 value={tier}
                 onChange={(e) => setTier(e.target.value)}
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none cursor-pointer transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none cursor-pointer transition-colors"
               >
                 <option value="Founder">Founder</option>
                 <option value="Core Member">Core Member</option>
@@ -280,7 +280,7 @@ export default function PersonnelManager({ initialMembers }: PersonnelManagerPro
               <select
                 value={clearanceLevel}
                 onChange={(e) => setClearanceLevel(e.target.value)}
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none cursor-pointer transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none cursor-pointer transition-colors"
               >
                 <option value="Level 1">Level 1</option>
                 <option value="Level 2">Level 2</option>
@@ -300,7 +300,7 @@ export default function PersonnelManager({ initialMembers }: PersonnelManagerPro
               value={portraitUrl}
               onChange={(e) => setPortraitUrl(e.target.value)}
               placeholder="e.g. /Members/Name.jpg (Leave blank for default placeholder)"
-              className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+              className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
             />
           </div>
 
@@ -321,7 +321,7 @@ export default function PersonnelManager({ initialMembers }: PersonnelManagerPro
         </h2>
 
         <div className="overflow-x-auto rounded-lg border border-[#d4af37]/15 bg-black/20">
-          <table className="min-w-full divide-y divide-[#d4af37]/15 text-left text-sm">
+          <table className="min-w-[900px] w-full divide-y divide-[#d4af37]/15 text-left text-sm">
             <thead className="bg-[#0c0c0c] text-xs uppercase tracking-widest text-[#d4af37]/90 font-mono">
               <tr>
                 <th className="px-6 py-4">Agent Name</th>

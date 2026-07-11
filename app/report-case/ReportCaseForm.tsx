@@ -19,7 +19,7 @@ export default function ReportCaseForm() {
   }
 
   return (
-    <form action={formAction} className="space-y-8 bg-black/40 border border-[#d4af37]/20 p-6 md:p-8 rounded-lg">
+    <form action={formAction} className="space-y-8 bg-black/40 border border-[#d4af37]/20 p-4 sm:p-8 rounded-lg">
 
       {/* SECTION 1: ESSENTIAL CONTACT INFO */}
       <div className="space-y-4">
@@ -37,7 +37,7 @@ export default function ReportCaseForm() {
               name="reporterName"
               required
               placeholder="Your Name"
-              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm"
+              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base"
             />
           </div>
 
@@ -51,7 +51,7 @@ export default function ReportCaseForm() {
               name="reporterPhone"
               required
               placeholder="+1 (555) 0100"
-              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm"
+              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base"
             />
             <span className="text-[10px] text-gray-400">Note: We will text you before calling</span>
           </div>
@@ -66,7 +66,7 @@ export default function ReportCaseForm() {
               name="reporterEmail"
               required
               placeholder="you@example.com"
-              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm"
+              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base"
             />
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function ReportCaseForm() {
             name="location"
             required
             placeholder="E.g. Amityville"
-            className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm"
+            className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base"
           />
         </div>
       </div>
@@ -111,7 +111,7 @@ export default function ReportCaseForm() {
                 type="checkbox"
                 name="activityTypes"
                 value={item.value}
-                className="mt-1 w-4 h-4 rounded border-[#d4af37]/40 bg-gray-900 accent-[#d4af37] cursor-pointer"
+                className="mt-1 w-5 h-5 rounded border-[#d4af37]/40 bg-gray-900 accent-[#d4af37] cursor-pointer flex-shrink-0"
               />
               <span>{item.label}</span>
             </label>
@@ -133,7 +133,7 @@ export default function ReportCaseForm() {
             name="description"
             rows={5}
             placeholder="Tell us what happened, in your own words. Take your time."
-            className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm resize-none"
+            className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base resize-none"
           />
         </div>
       </div>
@@ -157,7 +157,7 @@ export default function ReportCaseForm() {
                   name="timing"
                   value={time}
                   required
-                  className="w-4 h-4 border-[#d4af37]/40 bg-gray-900 accent-[#d4af37] cursor-pointer"
+                  className="w-5 h-5 border-[#d4af37]/40 bg-gray-900 accent-[#d4af37] cursor-pointer flex-shrink-0"
                 />
                 <span>{time}</span>
               </label>
@@ -182,7 +182,7 @@ export default function ReportCaseForm() {
                   name="dangerLevel"
                   value={danger}
                   required
-                  className="mt-1 w-4 h-4 border-[#d4af37]/40 bg-gray-900 accent-[#d4af37] cursor-pointer"
+                  className="mt-1 w-5 h-5 border-[#d4af37]/40 bg-gray-900 accent-[#d4af37] cursor-pointer flex-shrink-0"
                 />
                 <span>{danger}</span>
               </label>
@@ -195,7 +195,7 @@ export default function ReportCaseForm() {
       <div className="pt-2">
         <button
           type="submit"
-          className="w-full py-3 bg-[#d4af37] hover:bg-[#d4af37]/90 text-black font-bold uppercase tracking-wider rounded transition-colors text-sm shadow-md"
+          className="w-full py-3 bg-[#d4af37] hover:bg-[#d4af37]/90 text-black font-bold uppercase tracking-wider rounded transition-colors text-sm shadow-md cursor-pointer"
         >
           Submit Case Report
         </button>

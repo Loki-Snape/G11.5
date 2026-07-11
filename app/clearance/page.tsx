@@ -31,28 +31,28 @@ export default async function ClearancePage({ searchParams }: ClearancePageProps
   const isError = params.error === '1';
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#050505] text-white">
-      <div className="text-center">
-        <p className="text-[#d4af37] tracking-[2px] uppercase text-sm mb-2 font-serif">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#050505] text-white px-4">
+      <div className="text-center w-full max-w-sm">
+        <p className="text-[#d4af37] tracking-[2px] uppercase text-xs sm:text-sm mb-2 font-serif">
           Classified Clearance Required
         </p>
-        <h1 className="text-5xl font-serif mb-4 text-[#d4af37]">
+        <h1 className="text-3xl sm:text-5xl font-serif mb-4 text-[#d4af37] tracking-wider">
           G11.5 Operations
         </h1>
-        <p className="text-gray-400 italic">
+        <p className="text-gray-400 italic text-xs sm:text-sm">
           Advanced Paranormal Investigation Agency
         </p>
         
-        <form action={handleClearance} className="mt-6 flex flex-col items-center">
+        <form action={handleClearance} className="mt-6 flex flex-col items-center w-full">
           <input
             name="code"
             type="password"
             placeholder="Enter Admin Clearance Code"
-            className="px-4 py-2 bg-gray-900 border border-[#d4af37]/20 text-white rounded mb-2 focus:outline-none focus:border-[#d4af37] text-center w-64"
+            className="px-4 py-3 bg-gray-900 border border-[#d4af37]/20 text-white rounded mb-2 focus:outline-none focus:border-[#d4af37] text-center w-full max-w-[280px] text-base"
             required
           />
           {isError && (
-            <p className="text-red-500 text-xs mb-3 font-semibold">
+            <p className="text-red-500 text-xs mb-3 font-semibold tracking-wider">
               INVALID CLEARANCE CODE
             </p>
           )}

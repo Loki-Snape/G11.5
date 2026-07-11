@@ -43,8 +43,8 @@ export default async function ApplyPage({ searchParams }: ApplyPageProps) {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans flex flex-col">
       <NavBar />
-      <main className="flex-1 p-8 pt-28 max-w-4xl mx-auto w-full flex flex-col">
-        <h1 className="text-4xl font-serif text-[#d4af37] mb-2 tracking-wide text-center" style={{ fontFamily: 'Cinzel, serif' }}>
+      <main className="flex-1 px-4 py-8 sm:p-8 pt-24 sm:pt-28 max-w-4xl mx-auto w-full flex flex-col">
+        <h1 className="text-3xl sm:text-4xl font-serif text-[#d4af37] mb-2 tracking-wide text-center" style={{ fontFamily: 'Cinzel, serif' }}>
           Apply to G11.5 Agency
         </h1>
         <p className="text-gray-400 text-center mb-10 max-w-xl mx-auto text-sm leading-relaxed">
@@ -58,7 +58,7 @@ export default async function ApplyPage({ searchParams }: ApplyPageProps) {
         )}
 
         {/* Application Form */}
-        <form action={handleApply} className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-black/40 border border-[#d4af37]/20 p-6 md:p-8 rounded-lg mb-16">
+        <form action={handleApply} className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-black/40 border border-[#d4af37]/20 p-4 sm:p-8 rounded-lg mb-16">
           <div className="md:col-span-2 flex flex-col gap-1">
             <label htmlFor="fullName" className="text-xs uppercase tracking-wider text-gray-400 font-semibold">Full Name</label>
             <input
@@ -66,7 +66,7 @@ export default async function ApplyPage({ searchParams }: ApplyPageProps) {
               name="fullName"
               required
               placeholder="E.g. Agent Carter"
-              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm"
+              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base"
             />
           </div>
 
@@ -78,7 +78,7 @@ export default async function ApplyPage({ searchParams }: ApplyPageProps) {
               type="email"
               required
               placeholder="agent@g115.agency"
-              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm"
+              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base"
             />
           </div>
 
@@ -90,7 +90,7 @@ export default async function ApplyPage({ searchParams }: ApplyPageProps) {
               type="tel"
               required
               placeholder="+1 (555) 0199"
-              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm"
+              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base"
             />
           </div>
 
@@ -101,7 +101,7 @@ export default async function ApplyPage({ searchParams }: ApplyPageProps) {
               name="interestedRole"
               required
               defaultValue=""
-              className="p-3 bg-gray-900 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm"
+              className="p-3 bg-gray-900 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base"
             >
               <option value="" disabled className="text-gray-500">Select a specialized role...</option>
               
@@ -157,7 +157,7 @@ export default async function ApplyPage({ searchParams }: ApplyPageProps) {
               required
               rows={4}
               placeholder="State your unique skillset, specialized field knowledge, and what you bring to the department."
-              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm resize-none"
+              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base resize-none"
             />
           </div>
 
@@ -169,14 +169,14 @@ export default async function ApplyPage({ searchParams }: ApplyPageProps) {
               required
               rows={4}
               placeholder="Describe your motivation for dealing with the paranormal and alignment with G11.5 operations."
-              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-sm resize-none"
+              className="p-3 bg-gray-900/60 border border-[#d4af37]/20 rounded text-white focus:outline-none focus:border-[#d4af37] text-base resize-none"
             />
           </div>
 
           <div className="md:col-span-2 mt-2">
             <button
               type="submit"
-              className="w-full py-3 bg-[#d4af37] hover:bg-[#d4af37]/90 text-black font-bold uppercase tracking-wider rounded transition-colors text-sm shadow-md"
+              className="w-full py-3 bg-[#d4af37] hover:bg-[#d4af37]/90 text-black font-bold uppercase tracking-wider rounded transition-colors text-sm shadow-md cursor-pointer"
             >
               Submit Application
             </button>

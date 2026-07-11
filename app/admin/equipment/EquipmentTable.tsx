@@ -173,7 +173,7 @@ export default function EquipmentTable({ initialEquipment }: EquipmentTableProps
                 value={gearName}
                 onChange={(e) => setGearName(e.target.value)}
                 placeholder="e.g. Spectral Snare"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -187,7 +187,7 @@ export default function EquipmentTable({ initialEquipment }: EquipmentTableProps
                 value={classification}
                 onChange={(e) => setClassification(e.target.value)}
                 placeholder="e.g. Capture Device"
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -199,7 +199,7 @@ export default function EquipmentTable({ initialEquipment }: EquipmentTableProps
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
-                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-sm text-white focus:outline-none cursor-pointer transition-colors"
+                className="w-full px-3 py-2 bg-gray-950 border border-[#d4af37]/15 focus:border-[#d4af37]/50 rounded text-base text-white focus:outline-none cursor-pointer transition-colors"
               >
                 <option value="At HQ">At HQ</option>
                 <option value="Deployed">Deployed</option>
@@ -219,7 +219,7 @@ export default function EquipmentTable({ initialEquipment }: EquipmentTableProps
       </div>
 
       <div className="overflow-x-auto rounded-lg border border-[#d4af37]/15 bg-black/20">
-        <table className="min-w-full divide-y divide-[#d4af37]/15 text-left text-sm">
+        <table className="min-w-[800px] w-full divide-y divide-[#d4af37]/15 text-left text-sm">
           <thead className="bg-[#0c0c0c] text-xs uppercase tracking-widest text-[#d4af37]/90 font-mono">
             <tr>
               <th className="px-6 py-4">Gear Name</th>

@@ -42,7 +42,7 @@ export default async function MemberDossierPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans flex flex-col">
       <NavBar />
-      <main className="flex-1 max-w-4xl mx-auto w-full p-8 pt-28">
+      <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-8 sm:p-8 pt-24 sm:pt-28">
         <div className="border border-[#d4af37]/30 bg-black/40 p-6 md:p-10 rounded-lg flex flex-col md:flex-row gap-8 items-center md:items-start">
           {/* Member Photo */}
           <div className="flex-shrink-0">

@@ -66,10 +66,10 @@ export default function HomeClient({
   const scrollDuration = Math.max(40, Math.round(tickerContent.length / (2 * readingSpeed)));
 
   return (
-    <main className="p-8 max-w-5xl mx-auto flex-grow flex flex-col justify-between">
+    <main className="px-4 py-8 sm:p-8 max-w-5xl mx-auto flex-grow flex flex-col justify-between w-full">
       {/* 1. HERO SECTION WITH SCROLL PARALLAX */}
       <div 
-        className="relative my-8 py-16 px-8 rounded-lg border border-[#d4af37]/25 bg-[#0a0a0a]/75 overflow-hidden flex flex-col items-center justify-center text-center shadow-[inset_0_0_30px_rgba(212,175,55,0.05)]"
+        className="relative my-4 sm:my-8 py-10 sm:py-16 px-4 sm:px-8 rounded-lg border border-[#d4af37]/25 bg-[#0a0a0a]/75 overflow-hidden flex flex-col items-center justify-center text-center shadow-[inset_0_0_30px_rgba(212,175,55,0.05)]"
         style={{
           opacity: opacity,
           transform: `translateY(${translateY}px)`,
@@ -83,32 +83,32 @@ export default function HomeClient({
         </div>
 
         {/* Pulsing Logo */}
-        <div className="mb-6 relative z-10">
+        <div className="mb-4 sm:mb-6 relative z-10">
           <img
             src="/Logo.jpg"
             alt="G11.5 Logo"
-            className="h-28 w-28 rounded-full border-2 border-[#d4af37]/70 object-cover animate-logo-pulse p-1"
+            className="h-20 w-20 sm:h-28 sm:w-28 rounded-full border-2 border-[#d4af37]/70 object-cover animate-logo-pulse p-1"
           />
         </div>
 
         {/* Dramatic Portal Title */}
         <h1 
-          className="text-5xl md:text-6xl font-serif text-[#d4af37] font-bold tracking-[6px] uppercase gold-text-glow z-10 mb-4"
+          className="text-3xl sm:text-5xl md:text-6xl font-serif text-[#d4af37] font-bold tracking-[3px] sm:tracking-[6px] uppercase gold-text-glow z-10 mb-4"
           style={{ fontFamily: 'Cinzel, serif' }}
         >
           G11.5 Agency Portal
         </h1>
 
         {/* Tagline */}
-        <p className="text-gray-400 text-sm md:text-base italic tracking-widest font-mono uppercase max-w-xl z-10 border-t border-[#d4af37]/15 pt-4">
+        <p className="text-gray-400 text-xs sm:text-sm md:text-base italic tracking-wider sm:tracking-widest font-mono uppercase max-w-xl z-10 border-t border-[#d4af37]/15 pt-4">
           Advanced Paranormal Investigation Agency
         </p>
 
         {/* Terminal decorative brackets */}
-        <div className="absolute top-4 left-4 font-mono text-[10px] text-[#d4af37]/40 tracking-wider">
+        <div className="hidden sm:block absolute top-4 left-4 font-mono text-[10px] text-[#d4af37]/40 tracking-wider">
           FEED_ID: CL-7889 // LATENCY: 24MS
         </div>
-        <div className="absolute bottom-4 right-4 font-mono text-[10px] text-[#d4af37]/40 tracking-wider">
+        <div className="hidden sm:block absolute bottom-4 right-4 font-mono text-[10px] text-[#d4af37]/40 tracking-wider">
           LEVEL_04_CLEARANCE // DECRYPT: OK
         </div>
       </div>
@@ -118,10 +118,11 @@ export default function HomeClient({
 
       {/* 2. LATEST INTELLIGENCE TICKER */}
       <div className="w-full bg-[#070707] border-y border-[#d4af37]/20 py-3 overflow-hidden relative mb-12 shadow-[0_0_15px_rgba(212,175,55,0.05)] rounded-sm">
-        <div className="absolute left-0 top-0 bottom-0 bg-[#d4af37] text-[#050505] text-[10px] font-bold uppercase tracking-[2px] px-4 flex items-center z-10 font-serif">
-          INTELLIGENCE FEED
+        <div className="absolute left-0 top-0 bottom-0 bg-[#d4af37] text-[#050505] text-[9px] sm:text-[10px] font-bold uppercase tracking-[1px] sm:tracking-[2px] px-2.5 sm:px-4 flex items-center z-10 font-serif whitespace-nowrap">
+          <span className="hidden sm:inline">INTELLIGENCE FEED</span>
+          <span className="sm:hidden">INTEL FEED</span>
         </div>
-        <div className="pl-44 relative overflow-hidden">
+        <div className="pl-[115px] sm:pl-48 relative overflow-hidden">
           <div 
             className="animate-marquee whitespace-nowrap text-[#d4af37]/90 text-[11px] tracking-[3px] font-mono uppercase"
             style={{ animationDuration: `${scrollDuration}s` }}
@@ -132,7 +133,7 @@ export default function HomeClient({
       </div>
 
       {/* 3. STAT CARDS */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
         {/* Cases Card */}
         <TiltContainer>
           <div className="bg-[#0a0a0a]/90 border border-[#d4af37]/15 rounded-lg p-6 flex items-center justify-between gold-border-glow cursor-pointer transition-all duration-300">

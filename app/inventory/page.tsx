@@ -41,8 +41,8 @@ export default async function InventoryPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans flex flex-col">
       <NavBar />
-      <main className="flex-1 p-8 pt-28 max-w-4xl mx-auto w-full flex flex-col">
-        <h1 className="text-4xl font-serif text-[#d4af37] mb-2 tracking-wide text-center" style={{ fontFamily: 'Cinzel, serif' }}>
+      <main className="flex-1 px-4 py-8 sm:p-8 pt-24 sm:pt-28 max-w-4xl mx-auto w-full flex flex-col">
+        <h1 className="text-3xl sm:text-4xl font-serif text-[#d4af37] mb-2 tracking-wide text-center" style={{ fontFamily: 'Cinzel, serif' }}>
           Equipment Inventory
         </h1>
         <p className="text-gray-400 text-center mb-10 max-w-md mx-auto text-sm leading-relaxed">
@@ -50,8 +50,8 @@ export default async function InventoryPage() {
         </p>
 
         {equipmentList.length > 0 ? (
-          <div className="border border-[#d4af37]/20 rounded-lg overflow-hidden bg-black/30 shadow-lg">
-            <table className="w-full text-left border-collapse">
+          <div className="border border-[#d4af37]/20 rounded-lg overflow-hidden bg-black/30 shadow-lg overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
                 <tr className="border-b border-[#d4af37]/20 bg-black/60">
                   <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#d4af37] font-serif" style={{ fontFamily: 'Cinzel, serif' }}>

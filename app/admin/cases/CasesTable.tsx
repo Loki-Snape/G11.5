@@ -261,7 +261,7 @@ export default function CasesTable({ initialCases }: CasesTableProps) {
       )}
 
       <div className="overflow-x-auto rounded-lg border border-[#d4af37]/15 bg-black/20">
-        <table className="min-w-full divide-y divide-[#d4af37]/15 text-left text-sm">
+        <table className="min-w-[1100px] w-full divide-y divide-[#d4af37]/15 text-left text-sm">
           <thead className="bg-[#0c0c0c] text-xs uppercase tracking-widest text-[#d4af37]/90 font-mono">
             <tr>
               <th className="px-6 py-4">Tracking Code</th>

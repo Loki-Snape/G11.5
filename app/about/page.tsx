@@ -4,15 +4,15 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="flex-grow max-w-3xl mx-auto px-6 py-12 md:py-16 text-gray-300">
+    <main className="flex-grow max-w-3xl mx-auto px-4 sm:px-6 py-8 md:py-16 text-gray-300 w-full">
       {/* Classification Tag */}
-      <div className="mb-4 text-xs font-mono uppercase tracking-[3px] text-[#d4af37]/70">
+      <div className="mb-4 text-[10px] sm:text-xs font-mono uppercase tracking-[2px] sm:tracking-[3px] text-[#d4af37]/70">
         CLASSIFICATION: PUBLIC BRIEFING — LEVEL 0 CLEARANCE
       </div>
 
       {/* Main Title */}
       <h1 
-        className="text-4xl md:text-5xl font-serif font-bold text-[#d4af37] tracking-[3px] uppercase mb-8 gold-text-glow border-b border-[#d4af37]/25 pb-4"
+        className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#d4af37] tracking-[2px] sm:tracking-[3px] uppercase mb-8 gold-text-glow border-b border-[#d4af37]/25 pb-4"
         style={{ fontFamily: 'Cinzel, serif' }}
       >
         ABOUT G11.5 AGENCY
